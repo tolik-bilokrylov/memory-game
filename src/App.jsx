@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import uniqueCardsArray from "./data.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header/Header";
-import { Col, Container, Row } from "react-bootstrap";
 import Card from "./components/Card/Card";
 import Finish from "./components/Finish/Finish";
+import './App.scss';
 
 // FisherYates Modern Shuffle Algorithm
 function swap(array, i, j) {
@@ -115,11 +115,11 @@ const App = () => {
         bestScore={bestScore}
         handleRestart={handleRestart}
       />
-      <Container>
-        <Row>
+      <div className="card-cont">
+        <div className="card-slot">
           {cards.map((card, index) => {
             return (
-              <Col xs={6} md={3} lg={2}>
+              <div key={index} className="card-uno">
                 <Card
                   key={index}
                   card={card}
@@ -129,11 +129,11 @@ const App = () => {
                   isFlipped={checkIsFlipped(index)}
                   onClick={handleCardClick}
                 />
-              </Col>
+              </div>
             );
           })}
-        </Row>
-      </Container>
+        </div>
+      </div>
       <Finish
         showModal={showModal}
         moves={moves}

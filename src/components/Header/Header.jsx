@@ -1,9 +1,10 @@
 import React from "react";
+import  PropTypes from 'prop-types';
 import "./Header.scss";
 import { Container } from "react-bootstrap";
 import { FaRedo } from "react-icons/fa";
 
-const Header = ({ moves, bestScore, handleRestart, start }) => {
+const Header = ({ moves, bestScore, handleRestart }) => {
   return (
     <div>
       <h1>Memory Game</h1>
@@ -28,6 +29,12 @@ const Header = ({ moves, bestScore, handleRestart, start }) => {
       </Container>
     </div>
   );
+};
+
+Header.propTypes = {
+  handleRestart: PropTypes.func.isRequired,
+  bestScore: PropTypes.number.isRequired,
+  moves: PropTypes.number.isRequired,
 };
 
 export default Header;

@@ -1,5 +1,5 @@
 import React from "react";
-// import Button from "@material-ui/core/Button";
+import  PropTypes from 'prop-types';
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -12,7 +12,6 @@ const Finish = ({ handleRestart, showModal, bestScore, moves }) => {
     <div>
       <Dialog
         open={showModal}
-        disableBackdropClick
         disableEscapeKeyDown
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
@@ -34,6 +33,19 @@ const Finish = ({ handleRestart, showModal, bestScore, moves }) => {
       </Dialog>
     </div>
   );
+};
+
+Finish.propTypes = {
+  handleRestart: PropTypes.func.isRequired,
+  Dialog: PropTypes.shape({
+    showModal: PropTypes.bool.isRequired,
+    disableEscapeKeyDown: PropTypes.bool,
+  }),
+  bestScore: PropTypes.number.isRequired,
+  moves: PropTypes.number.isRequired,
+  isInactive: PropTypes.bool,
+  isFlipped: PropTypes.bool, 
+  isDisabled: PropTypes.bool,
 };
 
 export default Finish;

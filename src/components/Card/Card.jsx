@@ -1,4 +1,5 @@
 import React from "react";
+import  PropTypes from 'prop-types';
 import "./Card.scss";
 
 import classnames from "classnames";
@@ -25,4 +26,15 @@ const Card = ({ onClick, card, index, isInactive, isFlipped, isDisabled }) => {
     </div>
   );
 };
+
+Card.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  card: PropTypes.shape({
+    index: PropTypes.number,
+  }).isRequired,
+  isInactive: PropTypes.bool.isRequired,
+  isFlipped: PropTypes.bool.isRequired, 
+  isDisabled: PropTypes.bool.isRequired,
+};
+
 export default Card;
