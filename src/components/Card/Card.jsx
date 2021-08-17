@@ -1,8 +1,7 @@
 import React from "react";
 import  PropTypes from 'prop-types';
-import "./Card.scss";
-
 import classnames from "classnames";
+import "./Card.scss";
 
 const Card = ({ onClick, card, index, isInactive, isFlipped, isDisabled }) => {
   const handleClick = () => {

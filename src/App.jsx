@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import uniqueCardsArray from "./data.js";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import Header from "./components/Header/Header";
 import Card from "./components/Card/Card";
 import Finish from "./components/Finish/Finish";
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.scss';
 
 function swap(array, i, j) {

@@ -1,13 +1,13 @@
 import React from "react";
-import  PropTypes from 'prop-types';
-import "./Header.scss";
+import PropTypes from 'prop-types';
 import { Container } from "react-bootstrap";
 import { FaRedo } from "react-icons/fa";
+import "./Header.scss";
 
 const Header = ({ moves, bestScore, handleRestart }) => {
   return (
     <div>
-      <h1>Memory Game</h1>
+      <h1 className="title">Memory Game</h1>
       <Container>
         <div className="sub-header">
           <div className="moves">
@@ -15,7 +15,9 @@ const Header = ({ moves, bestScore, handleRestart }) => {
             {moves}
           </div>
           <div className="reshuffle">
-            <button onClick={handleRestart}>
+            <button
+              className="button"
+              onClick={handleRestart}>
               <FaRedo />
             </button>
           </div>

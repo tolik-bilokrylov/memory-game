@@ -1,4 +1,4 @@
-h1 {
+.title {
   padding: 20px;
   color: rgb(250, 185, 7);
   background: #7741dbe5;
@@ -16,7 +16,7 @@ h1 {
   justify-content: space-between;
 }
 
-button {
+.button {
   color: rgb(250, 185, 7);
   border-radius: 8px;
   background-color: #7741dbe5;
@@ -24,7 +24,7 @@ button {
   transition: color 0.3s,
     background-color 0.3s;
 }
-button:hover {
+.button:hover {
   color: #7741dbe5;
   background-color: rgb(250, 185, 7);
   font-weight: 800;
