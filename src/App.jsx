@@ -6,21 +6,23 @@ import Card from "./components/Card/Card";
 import Finish from "./components/Finish/Finish";
 import './App.scss';
 
-// FisherYates Modern Shuffle Algorithm
 function swap(array, i, j) {
   const temp = array[i];
   array[i] = array[j];
   array[j] = temp;
-}
+};
+
 function shuffleCards(array) {
   const length = array.length;
+
   for (let i = length; i > 0; i--) {
     const randomIndex = Math.floor(Math.random() * i);
     const currentIndex = i - 1;
     swap(array, currentIndex, randomIndex);
   }
+
   return array;
-}
+};
 
 const App = () => {
   const [cards, setCards] = useState(() =>
@@ -77,6 +79,7 @@ const App = () => {
       setOpencards([index]);
     }
   };
+  
   useEffect(() => {
     let timeout = null;
     if (openCards.length === 2) {
@@ -96,9 +99,11 @@ const App = () => {
   const checkIsFlipped = (index) => {
     return openCards.includes(index);
   };
+
   const checkIsInactive = (card) => {
     return Boolean(matchedCards[card.number]);
   };
+  
   const handleRestart = () => {
     setMatchedcards({});
     setOpencards([]);
